@@ -26,11 +26,11 @@ const App = () => {
   }, [searchTerm, category]);
 
   const fetchProducts = async () => {
-    let url = "http://localhost:3000/api/products";
+    let url = "https://e-commercelandingpagebackend.onrender.com/api/products";
     if (searchTerm)
-      url = `http://localhost:3000/api/products/search?name=${searchTerm}`;
+      url = `https://e-commercelandingpagebackend.onrender.com/api/products/search?name=${searchTerm}`;
     else if (category)
-      url = `http://localhost:3000/api/products/category/${category}`;
+      url = `https://e-commercelandingpagebackend.onrender.com/api/products/category/${category}`;
     const response = await axios.get(url);
     setProducts(response.data);
     setItemsToShow(8);
